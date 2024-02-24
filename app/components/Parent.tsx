@@ -150,7 +150,7 @@ const Parent = () => {
         
         {Minibeststate.map((data)=>{
 
-return  <MiniBestItem data={data} setParent={changestate}></MiniBestItem>
+return  <MiniBestItem key={JSON.stringify(data)} data={data} setParent={changestate}></MiniBestItem>
 })}
 
 <button 

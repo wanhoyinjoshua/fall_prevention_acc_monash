@@ -30,7 +30,7 @@ function Base(props:any){
             
             {props.data.additional&&props.data.additional.map((item:any)=>{
 
-                return <div>
+                return <div key={JSON.stringify(item)}>
                     {item.label}
                     <input  type='number' onChange={(e)=>{
                         var value=e.target.value

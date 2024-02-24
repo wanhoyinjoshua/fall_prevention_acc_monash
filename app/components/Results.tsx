@@ -101,7 +101,7 @@ function copy(){
     <div>
         Results
         <br></br>
-        This program has now assessed the risks based on the following factors, task requirement of exercise, patient's balance ability, patient's insight, and level of assistance available to patient. The recommended exercises are deemed to be most likely be suitable for home with the level of support specified.
+        This program has now assessed the risks based on the following factors, task requirement of exercise, balance ability, insight, and level of assistance available to patient. The recommended exercises are deemed to be most likely be suitable for home with the level of support specified.
         If there are no recommendations, it means the exercises suitable for that level of assistance are unlikely to be challenging enough for the patient. 
        
         <div className='sticky top-0 bg-orange-50 z-40'>
@@ -143,7 +143,7 @@ function copy(){
             {data.map((ex:any)=>{
 
             if(ex.risk==16&&ex.risk>=12){
-                return <div >
+                return <div key={ex.risk}>
                 
                 <label key={ex.Exercises} htmlFor= {`${ex.Exercises}_${ex.risk}`}>
             <div key={ex.Exercises} className="relative flex items-start py-4">
