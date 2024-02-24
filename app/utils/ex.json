@@ -1,0 +1,352 @@
+[
+    {
+        "Exercises": "Knee extension in sitting with thera bands",
+        "categoiry": "str",
+        "Requirements": "0",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":0
+        
+    },
+    {
+        "Exercises": "knee flexor strengthening in standing with ankle weights ",
+        "categoiry": "str",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":1
+    },
+    {
+        "Exercises": "knee flexor strengthening in sitting with thera bands ",
+        "categoiry": "str",
+        "Requirements": "0",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":2
+    },
+    {
+        "Exercises": "Hip abductor strengthening in standing with ankle weights",
+        "categoiry": "str",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":3
+    },
+    {
+        "Exercises": "Hip abductor strengthening in sitting with thera bands ",
+        "categoiry": "str",
+        "Requirements": "0",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":4
+    },
+    {
+        "Exercises": "Ankle plantarflexor strengthening in standing with support ",
+        "categoiry": "str",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":5
+    },
+    {
+        "Exercises": "Ankle plantarflexor strengthening in sitting",
+        "categoiry": "str",
+        "Requirements": "0",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":6
+    },
+    {
+        "Exercises": "Ankle dorsiflexor strengthening in standing with support ",
+        "categoiry": "str",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":7
+    },
+    {
+        "Exercises": "Ankle dorsiflexor strengthening in sitting",
+        "categoiry": "str",
+        "Requirements": "0",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":8
+    },
+    {
+        "Exercises": "To improve your ability to take a quick, big, side step to maintain your balance.",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":9
+    },
+    {
+        "Exercises": "To improve your ability to balance while bending down to move objects.",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":10
+    },
+    {
+        "Exercises": "Knee bends with hold support ",
+        "categoiry": "bal",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":11
+    },
+    {
+        "Exercises": "Knee bends without hold support",
+        "categoiry": "bal",
+        "Requirements": "2",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":12
+    },
+    {
+        "Exercises": "Backwards walking with hold support / aid ",
+        "categoiry": "bal",
+        "Requirements": "3",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":13
+    },
+    {
+        "Exercises": "Backwards walking without support ",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":14
+    },
+    {
+        "Exercises": "Walking in figure 8 with hold support/aid",
+        "categoiry": "bal",
+        "Requirements": "3",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":15
+    },
+    {
+        "Exercises": "Walking in figure 8 with no support",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":16
+    },
+    {
+        "Exercises": "Sideways walking with hold support ",
+        "categoiry": "bal",
+        "Requirements": "3",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":17
+    },
+    {
+        "Exercises": "Sideways walking with no support ",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":18
+    },
+    {
+        "Exercises": "Heel toe walking with no support ",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":19
+    },
+    {
+        "Exercises": "Heel toe walking with hold support ",
+        "categoiry": "bal",
+        "Requirements": "3",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":20
+    },
+    {
+        "Exercises": "One leg stand with hold support ",
+        "categoiry": "bal",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":21
+    },
+    {
+        "Exercises": "One leg stand without support ",
+        "categoiry": "bal",
+        "Requirements": "2",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":22
+    },
+    {
+        "Exercises": "Heel walking with no support ",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":23
+    },
+    {
+        "Exercises": "Heel walking with hold support / aid ",
+        "categoiry": "bal",
+        "Requirements": "3",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":24
+    },
+    {
+        "Exercises": "Toe walking with no support ",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":25
+    },
+    {
+        "Exercises": "Toe walking with hold support / aid ",
+        "categoiry": "bal",
+        "Requirements": "3",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":26
+    },
+    {
+        "Exercises": "Heel toe walking backwards with no support ",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":27
+    },
+    {
+        "Exercises": "Heel toe walking backwards with hold support ",
+        "categoiry": "bal",
+        "Requirements": "3",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":28
+    },
+    {
+        "Exercises": "Sit to stand with UL support ",
+        "categoiry": "bal",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":29
+    },
+    {
+        "Exercises": "Sit to stand with no Ul support ",
+        "categoiry": "bal",
+        "Requirements": "2",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":30
+    },
+    {
+        "Exercises": "Stair walking with support ",
+        "categoiry": "bal",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":31
+    },
+    {
+        "Exercises": "Stair walking with no support",
+        "categoiry": "bal",
+        "Requirements": "2",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":32
+    },
+    {
+        "Exercises": "Reach in multiple directions with narrow base of  support ",
+        "categoiry": "bal",
+        "Requirements": "4",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":33
+    },
+
+    {
+        "Exercises": "Stand and look behind",
+        "categoiry": "bal",
+        "Requirements": "2",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":34
+    },
+    {
+        "Exercises": "Stand with narrow base of support without support  ",
+        "categoiry": "bal",
+        "Requirements": "2",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":35
+    },
+    {
+        "Exercises": "Stand with narrow base of support with support ",
+        "categoiry": "bal",
+        "Requirements": "1",
+        "instructions": "",
+        "filepath": "",
+        "Source": "",
+        "id":36
+    },
+    {
+        "Exercises": "Stand with tandem stance without upper limb support ",
+        "categoiry": "bal",
+        "Requirements": "2"
+        ,
+        "id":37
+    }
+    ,
+    {
+        "Exercises": "Stand with tandem stance with upper limb support ",
+        "categoiry": "bal",
+        "Requirements": "1"
+        ,
+        "id":38
+    }
+]
