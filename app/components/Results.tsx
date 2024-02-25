@@ -39,56 +39,53 @@ const copyToClipboard = async (text:string) => {
 function copy(){
     setAlert(true)
     var string=`
-    Ax/ \n
-    30s STS - ${props.data["30s_chair_test"]}reps\n
-    TUG - ${props.data["TUG"]}S _ STEPS\n
-    Feet together ${props.data["Feet_tgt"]}s\n
-    Semi tandem  ${props.data["Semi_tandem"]} s\n
-    Tandem stand  ${props.data["Tandem"]}s\n
-    One leg stand  ${props.data["one_leg_stand"]}s\n
-    \n
-    MINI BEST TEST Score ${score_minibest.score}/ 28\n
+    Ax/ 
+    30s STS - ${props.data["30s_chair_test"]}reps
+    TUG - ${props.data["TUG"]}S _ STEPS
+    Feet together ${props.data["Feet_tgt"]}s
+    Semi tandem  ${props.data["Semi_tandem"]} s
+    Tandem stand  ${props.data["Tandem"]}s
+    One leg stand  ${props.data["one_leg_stand"]}s
+    
+    MINI BEST TEST Score ${score_minibest.score}/ 28
     RISK AS PER AGE NORM - ${score_minibest.isHighrisk?"HIGHER RISK FOR FALLS":"LOWER RISK FOR FALLS"}
-    SCORE 0-2 0=Severe, 1=Moderate, 2=Normal\n
-    ${props.data["minibest_1"]} Sit to stand\n
-    ${props.data["minibest_2"]} Rise to toes (3 secs)\n
-    ${props.data["minibest_3_L"]} Stand on one leg  left (max 20 secs) time (secs) = ${props.data["minibest_3_trial_2_L"]} secs\n
-    ${props.data["minibest_3_R"]} Stand on one leg  right (max 20 secs) time (secs) =  ${props.data["minibest_3_trial_2_R"]}5 secs\n
-    ${props.data["minibest_4"]} Compensatory stepping forwards\n
-    ${props.data["minibest_5"]} Compensatory stepping backward\n
-    ${props.data["minibest_6_L"]} Compensatory stepping to the left\n
-    ${props.data["minibest_6_R"]} Compensatory stepping to the right\n
-    ${props.data["minibest_7"]} Firm surface FT, EO (max 30 secs) time (secs) =${props.data["minibest_7_s"]} secs\n
-    ${props.data["minibest_8"]} Foam FT, EC (max 30 secs) time (secs) =${props.data["minibest_8_s"]}\n
-    ${props.data["minibest_9"]} Incline FA, EC (max 30 secs) time (secs) =${props.data["minibest_9_s"]}\n
-    ${props.data["minibest_10"]} Change gait speed over 10 metres \n
-    Preferred speed: time (secs) /# of steps =\n
+    SCORE 0-2 0=Severe, 1=Moderate, 2=Normal
+    ${props.data["minibest_1"]} Sit to stand
+    ${props.data["minibest_2"]} Rise to toes (3 secs)
+    ${props.data["minibest_3_L"]} Stand on one leg  left (max 20 secs) time (secs) = ${props.data["minibest_3_trial_2_L"]} secs
+    ${props.data["minibest_3_R"]} Stand on one leg  right (max 20 secs) time (secs) =  ${props.data["minibest_3_trial_2_R"]}5 secs
+    ${props.data["minibest_4"]} Compensatory stepping forwards
+    ${props.data["minibest_5"]} Compensatory stepping backward
+    ${props.data["minibest_6_L"]} Compensatory stepping to the left
+    ${props.data["minibest_6_R"]} Compensatory stepping to the right
+    ${props.data["minibest_7"]} Firm surface FT, EO (max 30 secs) time (secs) =${props.data["minibest_7_s"]} secs
+    ${props.data["minibest_8"]} Foam FT, EC (max 30 secs) time (secs) =${props.data["minibest_8_s"]}
+    ${props.data["minibest_9"]} Incline FA, EC (max 30 secs) time (secs) =${props.data["minibest_9_s"]}
+    ${props.data["minibest_10"]} Change gait speed over 10 metres 
+    Preferred speed: time (secs) /# of steps =
     
-    Fast speed: time (secs) =\n
-    ${props.data["minibest_11"]} Walk with head turns:10 metres time (secs) = \n
-    ${props.data["minibest_12"]} Walk with pivot turns: # steps on turn = \n
-    ${props.data["minibest_13"]} Step over obstacles\n
-    TUG: time (secs) = ${props.data["minibest_14_TUG"]} secs\n
-    Cognitive TUG “Days of the week backwards”: time (secs) =  ${props.data["minibest_14_TUG_DUAL"]} secs\n
+    Fast speed: time (secs) =
+    ${props.data["minibest_11"]} Walk with head turns:10 metres time (secs) = 
+    ${props.data["minibest_12"]} Walk with pivot turns: # steps on turn = 
+    ${props.data["minibest_13"]} Step over obstacles
+    TUG: time (secs) = ${props.data["minibest_14_TUG"]} secs
+    Cognitive TUG “Days of the week backwards”: time (secs) =  ${props.data["minibest_14_TUG_DUAL"]} secs
     
-    VESTIBULAR FUCTION TESTS\n
-    -Saccades:NT\n
-    -Smooth pursuit:NT\n
-    -VOR:NT\n
-    -VOR Suppression:NT\n
-    -Head thrust test:- NT\n
-    \n
-    VERTEBROBASILAR INSUFFICIENCY TEST:NT\n
-    \n
+    VESTIBULAR FUCTION TESTS
+    -Saccades:NT
+    -Smooth pursuit:NT
+    -VOR:NT
+    -VOR Suppression:NT
+    -Head thrust test:- NT
     
-    BPPV TESTS:\n
-    -Right Loaded Hallpike:NAD\n
-    -Left Loaded Hallpike:NAd\n
+    VERTEBROBASILAR INSUFFICIENCY TEST:NT
+    
+    
+    BPPV TESTS:
+    -Right Loaded Hallpike:NAD
+    -Left Loaded Hallpike:NAd
     -Right Roll Test:NAd\n
-    -Left Roll Test:NAD\n
-    ${JSON.stringify(props.data)}
-
-    
+    -Left Roll Test:NAD
     `
     copyToClipboard(string)
     setTimeout(() => {
