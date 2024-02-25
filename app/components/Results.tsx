@@ -8,6 +8,8 @@ import Alert from './Alert'
 const Results = (props:any) => {
     
 const [assist,setAssist]=useState(4)
+const [lowrisk,setLowRisk]=useState(10)
+const [highrisk,setHighRisk]=useState(16)
 const data=useResults(props.data,assist)
 const [alert,setAlert]=useState(false)
 const Risk=new RiskClass(props.data)
@@ -24,7 +26,7 @@ const aray=["","handsonassist","sba","supervision","indep"]
 
 function hardreload(){
     console.log("hi")
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "https://fall-prevention-acc-monash.vercel.app/";
 }
 const copyToClipboard = async (text:string) => {
     try {
@@ -123,16 +125,68 @@ function copy(){
         <option value={4}>Independent</option>
       </select>
       <br></br>
+      <section className='flex flex-row'>
+
+      
+      <div>
+      <label htmlFor="risk_lower" className="block text-sm font-medium leading-6 text-gray-900">
+      Risk tolerance level lower bound
+      </label>
+      <input
+        id="risk_lower"
+        name="risk_lower"
+        className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        type='number'
+        min="0" max="64"
+        defaultValue={10}
+        onChange={(e)=>{
+           
+                setLowRisk(Number(e.target.value))
+
+            
+            
+        }}
+      />
+
+      </div>
+     <div>
+     <label htmlFor="risk_higher" className="block text-sm font-medium leading-6 text-gray-900">
+      Risk tolerance level upper bound
+      </label>
+      <input
+        id="risk_higher"
+        name="risk_higher"
+        className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        type='number'
+        min="1" max="64"
+        defaultValue={16}
+        onChange={(e)=>{
+            
+                setHighRisk(Number(e.target.value))
+
+            
+           
+        }}
+      />
+
+     </div>
+
+     </section>
+     <br></br>
+  
+      
+
       <div className='flex flex-row gap-10'>
       <Downloadlink data={selected}></Downloadlink>
 
-      <button onClick={hardreload} className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Try Again</button>
-
+     
       <button 
 
       onClick={copy}
       
       className="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Copy text for documentation</button>
+
+<button onClick={hardreload} className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Try Again</button>
 
       </div>
      
@@ -140,13 +194,15 @@ function copy(){
 
 
 <div className='grid grid-cols-4 gap-4 grid-cols-2   '>
+    
+    
             {data.map((ex:any)=>{
 
-            if(ex.risk==16&&ex.risk>=12){
-                return <div key={ex.risk}>
+            if(ex.risk<=highrisk&&ex.risk>=lowrisk){
+                return <div key={ex.id}>
                 
-                <label key={ex.Exercises} htmlFor= {`${ex.Exercises}_${ex.risk}`}>
-            <div key={ex.Exercises} className="relative flex items-start py-4">
+                <label key={ex.id} htmlFor= {`${ex.id}`}>
+            <div key={ex.id} className="relative flex items-start py-4">
             <div className={` min-w-0 flex-1 text-sm leading-6`}>
             <div 
 
@@ -172,7 +228,7 @@ function copy(){
 
             className={`p-5 ${selected[aray[assist]].includes(ex.id)?"bg-green-50":""} cursor-pointer  select-none font-medium text-gray-900 rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}>
 
-            {ex.Exercises} 
+            {`${ex.Exercises}||(Risk=${ex.risk})`}
 
 
             </div>
