@@ -108,6 +108,9 @@ BPPV TESTS:
         If there are no recommendations, it means the exercises suitable for that level of assistance are unlikely to be challenging enough for the patient. 
        
         <div className='sticky top-0 bg-orange-50 z-40'>
+          <div>
+            Mini Best score- {score_minibest.score}
+          </div>
       <label htmlFor="assist" className="block text-sm font-medium leading-6 text-gray-900">
       Assistance level patient have access to( set to independent by default)
       </label>

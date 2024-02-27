@@ -115,7 +115,7 @@ export const MiniBest=
 {
     "id":"minibest_6_L",
     "subscore":"REACTIVE_POSTURAL_CONTROL",
-    "title":"Compensatory stepping correction lateral",
+    "title":"Compensatory stepping correction lateral (left)",
     "options":[
         "Recovers independently with 1 step (crossover or lateral OK).",
         "Several Steps to recover equilibrium ",
@@ -131,7 +131,7 @@ export const MiniBest=
 {
     "id":"minibest_6_R",
     "subscore":"REACTIVE_POSTURAL_CONTROL",
-    "title":"Compensatory stepping correction lateral",
+    "title":"Compensatory stepping correction lateral (right)",
     "options":[
         "Recovers independently with 1 step (crossover or lateral OK).",
         "Several Steps to recover equilibrium ",
