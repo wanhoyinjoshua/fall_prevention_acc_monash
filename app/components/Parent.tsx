@@ -5,6 +5,7 @@ import MiniBestItem from './MiniBestItem'
 import { MiniBest } from '../constants/MiniBest'
 import Results from './Results'
 import { InitialState } from '../constants/InitialState'
+import Input from './Input'
 const Parent = () => {
 
     function changestate(key:any,value:any){
@@ -35,17 +36,17 @@ const Parent = () => {
     const [Minibeststate,setMinibest]=useState(MiniBest)
 
   return (
-    <div>
+    <div className='my-8'>
 
        
        
 
     {globalstate==0&&
-    <div>
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <section>
         <div className="block text-sm font-medium leading-6 text-gray-900">Does this patient have good insight</div>
             <section className="isolate inline-flex rounded-md shadow-sm">
-                <button className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ${active["0"]?"bg-green-50":"bg-white"}` }
+                <button className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 ${active["0"]?"hover:bg-green-400":"hover:bg-gray-50"} focus:z-10 ${active["0"]?"bg-green-400":"bg-white"}` }
                 onClick={()=>{
                     
                    setActive({
@@ -60,7 +61,7 @@ const Parent = () => {
                     Yes
                 </button>
                 <button  
-               className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ${active["1"]?"bg-green-50":"bg-white"}`}
+               className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 ${active["1"]?"hover:bg-green-400":"hover:bg-gray-50"} focus:z-10 ${active["1"]?"bg-green-400":"bg-white"}`}
                 onClick={()=>{
                     
                     setActive({
@@ -77,65 +78,51 @@ const Parent = () => {
                
             </section>
             <section className='flex flex-row gap-20'>
-            <div>
-            Age:
-            <input 
-            type='number'
-            onChange={(e)=>{
-                changestate("age",e.target.value)
-            }}>
-            </input>
-            </div>
-            <div>
-            30 s chair test (sec)
-            <input 
-            type='number'
-            onChange={(e)=>{
-                changestate("30s_chair_test",e.target.value)
-            }}>
-            </input>
-            </div>
+            <Input
+            label={'Age'}
+            id={'age'}
+            type={"number"}
+            changestate={changestate}
+            />
+            <Input
+            label={'30 s chair test (sec)'}
+            id={"30s_chair_test"}
+            type={"number"}
+            changestate={changestate}
+            />
+            <Input
+            label={'Feet together (sec)'}
+            id={'Feet_tgt'}
+            type={"number"}
+            changestate={changestate}
+            />
+             <Input
+            label={'Semi tandem Stance (sec)'}
+            id={"Semi_tandem"}
+            type={"number"}
+            changestate={changestate}
+            />
+             <Input
+            label={'Tandem (sec)'}
+            id={'Tandem'}
+            type={"number"}
+            changestate={changestate}
+            />
+          <Input
+            label={'Single leg stance (sec) with best leg'}
+            id={'one_leg_stand'}
+            type={"number"}
+            changestate={changestate}
+            />
 
-            <div>
-            Feet together  (sec)
-            <input 
-            type='number'
-            onChange={(e)=>{
-                changestate("Feet_tgt",e.target.value)
-            }}>
-            </input>
-            </div>
+           
 
-            <div>
-            Semi tandem Stance  (sec)
-            <input 
-            type='number'
-            onChange={(e)=>{
-                changestate("Semi_tandem",e.target.value)
-            }}>
-            </input>
-            </div>
+          
 
-            <div>
-            Tandem  (sec)
-            <input 
-            type='number'
-            onChange={(e)=>{
-                changestate("Tandem",e.target.value)
-            }}>
-            </input>
-            </div>
+          
 
 
-            <div>
-            Single leg stance (sec) with best leg 
-            <input 
-            type='number'
-            onChange={(e)=>{
-                changestate("one_leg_stand",e.target.value)
-            }}>
-            </input>
-            </div>
+           
             
 
             </section>
@@ -147,20 +134,23 @@ const Parent = () => {
 
             
         </section>
-        
+
+       
+        <section className='[&>*:nth-child(even)]:text-blue-600 [&>*:nth-child(even)]:font-bold  [&>*:nth-child(odd)]:bg-slate-100 '>
         {Minibeststate.map((data)=>{
 
-return  <MiniBestItem key={JSON.stringify(data)} data={data} setParent={changestate}></MiniBestItem>
-})}
+    return  <MiniBestItem key={JSON.stringify(data)} data={data} setParent={changestate}></MiniBestItem>
+    })}
+    </section>
 
-<button 
-onClick={()=>{
-setGlobal(1)
-}}
+    <button 
+    onClick={()=>{
+    setGlobal(1)
+    }}
 
-className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 "bg-white"` }>
-Submit
-</button>
+    className="rounded-full bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+    Submit
+    </button>
 
     </div>
     

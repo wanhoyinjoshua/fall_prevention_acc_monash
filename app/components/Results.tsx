@@ -5,6 +5,10 @@ import { useState } from 'react'
 import Downloadlink from "./DownloadLink"
 import RiskClass from '../utils/RiskClass'
 import Alert from './Alert'
+import MultiRangeSlider from "multi-range-slider-react";
+import { FaRegThumbsUp } from "react-icons/fa";
+import { FaRegThumbsDown } from "react-icons/fa";
+import { CgDanger } from "react-icons/cg";
 const Results = (props:any) => {
     
 const [assist,setAssist]=useState(4)
@@ -23,7 +27,10 @@ const [selected,setSelected]=useState<any>({
 
 })
 const aray=["","handsonassist","sba","supervision","indep"]
-
+const handleInput = (e:any) => {
+	setLowRisk(e.minValue);
+	setHighRisk(e.maxValue);
+};
 function hardreload(){
     console.log("hi")
     window.location.href = "https://fall-prevention-acc-monash.vercel.app/";
@@ -119,52 +126,23 @@ BPPV TESTS:
         <option value={4}>Independent</option>
       </select>
       <br></br>
-      <section className='flex flex-row'>
-
+      <div>Risk tolerance- adjust as per need, 0-16 is deemed resaonbaly safe, and 10-16 is deemed to be maximising difficulty, ideally you want to choose exercises closer to 16 to maximise difficulty and to minimise risk.</div>
+      <section className='flex flex-row w-5/6'>
       
-      <div>
-      <label htmlFor="risk_lower" className="block text-sm font-medium leading-6 text-gray-900">
-      Risk tolerance level lower bound
-      </label>
-      <input
-        id="risk_lower"
-        name="risk_lower"
-        className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-        type='number'
-        min="0" max="64"
-        defaultValue={10}
-        onChange={(e)=>{
-           
-                setLowRisk(Number(e.target.value))
-
-            
-            
-        }}
-      />
-
-      </div>
-     <div>
-     <label htmlFor="risk_higher" className="block text-sm font-medium leading-6 text-gray-900">
-      Risk tolerance level upper bound
-      </label>
-      <input
-        id="risk_higher"
-        name="risk_higher"
-        className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-        type='number'
-        min="1" max="64"
-        defaultValue={16}
-        onChange={(e)=>{
-            
-                setHighRisk(Number(e.target.value))
-
-            
-           
-        }}
-      />
-
-     </div>
-
+      <MultiRangeSlider
+			min={0}
+			max={64}
+			step={1}
+      className='w-full'
+      ruler={true}
+      label={true}
+			minValue={lowrisk}
+			maxValue={highrisk}
+			onInput={(e) => {
+				handleInput(e);
+			}}
+		/>
+     
      </section>
      <br></br>
   
@@ -201,28 +179,56 @@ BPPV TESTS:
             <div 
 
             onClick={()=>{
+              function select(){
+                if(selected[aray[assist]].indexOf(ex.id)==-1){
+                  var newselect= {...selected}
+                      newselect[aray[assist]].push(ex.id)
+                      
+                      setSelected({...newselect})
+  
+              }else if( selected[aray[assist]].indexOf(ex.id)!=-1){
+              
+                      var newselect= {...selected}
+                      newselect[aray[assist]].splice(newselect[aray[assist]].indexOf(ex.id),1)
+                  
+                      setSelected({...newselect})
+  
+  
+              }
 
-            if(selected[aray[assist]].indexOf(ex.id)==-1){
-                var newselect= {...selected}
-                    newselect[aray[assist]].push(ex.id)
-                    
-                    setSelected({...newselect})
+              }
+              if(ex.risk<10 &&selected[aray[assist]].indexOf(ex.id)==-1){
+                if(window.confirm('Are you sure? this exercise is likely too easy for the patient.')){
+                  select()
+                }else{
+                  return
 
-            }else if( selected[aray[assist]].indexOf(ex.id)!=-1){
-            
-                    var newselect= {...selected}
-                    newselect[aray[assist]].splice(newselect[aray[assist]].indexOf(ex.id),1)
+                }
+               
+              }
+              else if(ex.risk>16 &&selected[aray[assist]].indexOf(ex.id)==-1){
+                if(window.confirm('Are you sure? this exercise is likely unsafe for the patient.')){
+                  select()
+                }else{
+                  return
+
+                }
                 
-                    setSelected({...newselect})
 
+              }
+              else{
+                select()
 
-            }
+                
+            
+          }
 
             }}
 
             className={`p-5 ${selected[aray[assist]].includes(ex.id)?"bg-green-50":""} cursor-pointer  select-none font-medium text-gray-900 rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}>
 
             {`${ex.Exercises}||(Risk=${ex.risk})`}
+            {ex.risk>=10&&ex.risk<=16?<FaRegThumbsUp/>:ex.risk<10?<FaRegThumbsDown/>:<CgDanger/>}
 
 
             </div>
@@ -232,33 +238,7 @@ BPPV TESTS:
             <input
             id={`${ex.id}`}
             name={`${ex}`}
-            onChange={(event)=>{
-                console.log(event.target.checked)
-                const isChecked = event.target.checked;
-                selected[aray[assist]].includes(ex.id)
-                if(isChecked &&  selected[aray[assist]].indexOf(ex.id)==-1){
-                    //SET TO STATE
-                    var newselect= {...selected}
-                    newselect[aray[assist]].push(ex.id)
-                    
-                    setSelected({...newselect})
-                    
-
-
-                }
-                else if (isChecked==false){
-                    if(isChecked &&  selected[aray[assist]].indexOf(ex.id)!=-1){
-                        var newselect= {...selected}
-                        newselect[aray[assist]].splice(newselect[aray[assist]].indexOf(ex.id),1)
-                    
-                        setSelected({...newselect})
-
-
-                    }
-
-                }
-                
-            }}
+           
 
             type="checkbox"
             className="sr-only h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"

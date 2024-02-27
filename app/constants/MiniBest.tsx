@@ -31,18 +31,18 @@ export const MiniBest=
 {
     "id":"minibest_3_L",
     "subscore":"ANTICIPATORY",
-    "title":"Stand on one leg",
+    "title":"",
     "options":[
         "Unable",
         "<20s",
         "20s"
     ],
     "additional":[{
-        "label":"Time in seconds Trial 1",
+        "label":"Stand on left leg Time in seconds Trial 1",
         "id":"minibest_3_trial_1_L"
         
     },{
-        "label":"Time in seconds Trial 2",
+        "label":"Stand on left leg Time in seconds Trial 2",
         "id":"minibest_3_trial_2_L"
 
     }],
@@ -58,18 +58,18 @@ export const MiniBest=
 {
     "id":"minibest_3_R",
     "subscore":"ANTICIPATORY",
-    "title":"Stand on one leg",
+    "title":"",
     "options":[
         "Unable",
         "<20s",
         "20s"
     ],
     "additional":[{
-        "label":"Time in seconds Trial 1",
+        "label":"Stand on right leg Time in seconds Trial 1",
         "id":"minibest_3_trial_1_R"
         
     },{
-        "label":"Time in seconds Trial 2",
+        "label":"Stand on right leg Time in seconds Trial 2",
         "id":"minibest_3_trial_2_R"
 
     }],
@@ -147,14 +147,14 @@ export const MiniBest=
 {
     "id":"minibest_7",
     "subscore":"SENSORY_ORIENTATION",
-    "title":"STANCE (FEET TOGETHER); EYES OPEN, FIRM SURFACE ",
+    "title":" ",
     "options":[
         "Unable",
         "<30s",
         "30s"
     ],
     "additional":[{
-        "label":"Time in seconds",
+        "label":"STANCE (FEET TOGETHER); EYES OPEN, FIRM SURFACE (Time in seconds)",
         "id":"minibest_7_s"
         
     }]
@@ -163,14 +163,14 @@ export const MiniBest=
 {
     "id":"minibest_8",
     "subscore":"SENSORY_ORIENTATION",
-    "title":"STANCE (FEET TOGETHER); EYES CLOSED, FOAM SURFACE",
+    "title":"",
     "options":[
         "Unable",
         "<30s",
         "30s"
     ],
     "additional":[{
-        "label":"Time in seconds",
+        "label":"STANCE (FEET TOGETHER); EYES CLOSED, FOAM SURFACE (Time in seconds)",
         "id":"minibest_8_s"
         
     }]
@@ -179,14 +179,14 @@ export const MiniBest=
 {
     "id":"minibest_9",
     "subscore":"SENSORY_ORIENTATION",
-    "title":"INCLINE- EYES CLOSED",
+    "title":"",
     "options":[
         "Unable",
         "<30s",
         "30s"
     ],
     "additional":[{
-        "label":"Time in seconds",
+        "label":"INCLINE- EYES CLOSED (Time in seconds)",
         "id":"minibest_9_s"
         
     }]
@@ -240,7 +240,7 @@ export const MiniBest=
 {
     "id":"minibest_14",
     "subscore":"DYNAMIC_GAIT",
-    "title":"TIMED UP & GO WITH DUAL TASK",
+    "title":"",
     "options":[
         "Stops counting while walking OR stops walking while counting.",
         "Dual Task affects either counting OR walking (>10%) when compared to the TUG without Dual Task",

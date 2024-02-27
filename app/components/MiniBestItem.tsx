@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import Input from './Input'
+import Divider from './Divider'
 
 function Base(props:any){
 
@@ -27,18 +29,21 @@ function Base(props:any){
 
     return (
         <div>
+            <br></br>
             
             {props.data.additional&&props.data.additional.map((item:any)=>{
 
                 return <div key={JSON.stringify(item)}>
-                    {item.label}
-                    <input  type='number' onChange={(e)=>{
-                        var value=e.target.value
-                        setparent(item.id,value)
+                    
+                    <Input
+                    label={item.label}
+                    id={item.id}
+                    type={"number"}
+                    changestate={setparent}
 
-
-                    }}>
-                    </input>
+                    />
+                   
+                    
                     </div>
                 
 
@@ -47,8 +52,9 @@ function Base(props:any){
 
           
             <div className="block text-sm font-medium leading-6 text-gray-900">{props.data.title}</div>
+           <br></br>
             <section className="isolate inline-flex rounded-md shadow-sm">
-                <button className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ${active["0"]?"bg-green-50":"bg-white"}` }
+                <button className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 ${active["0"]?"hover:bg-green-400":"hover:bg-gray-50"} focus:z-10 ${active["0"]?"bg-green-400":"bg-white"}` }
                 onClick={()=>{
                     
                     setparent(props.data.id,0)
@@ -59,7 +65,7 @@ function Base(props:any){
                     {props.data.options[0]} 
                 </button>
                 <button  
-               className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ${active["1"]?"bg-green-50":"bg-white"}`}
+               className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 ${active["1"]?"hover:bg-green-400":"hover:bg-gray-50"} focus:z-10 ${active["1"]?"bg-green-400":"bg-white"}`}
                 onClick={()=>{
                     
                     setparent(props.data.id,1)
@@ -70,7 +76,7 @@ function Base(props:any){
                 {props.data.options[1]} 
                 </button>
                 <button 
-                 className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 ${active["2"]?"bg-green-50":"bg-white"}`}
+                 className={`relative inline-flex items-center rounded-l-md  px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 ${active["2"]?"hover:bg-green-400":"hover:bg-gray-50"} focus:z-10 ${active["2"]?"bg-green-400":"bg-white"}`}
                 onClick={()=>{
                     
                     setparent(props.data.id,2)
@@ -81,6 +87,7 @@ function Base(props:any){
                 {props.data.options[2]} 
                 </button>
             </section>
+            <br></br>
             
     
         </div>
@@ -103,7 +110,12 @@ if(props.data.id==""){
 
 
   return (
+    <div>
+
+    
    <Base setParent={props.setParent} data={props.data}></Base>
+   <Divider/>
+   </div>
   )
 }
 
